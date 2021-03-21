@@ -110,3 +110,4 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 
 "enter to confirm selection
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
