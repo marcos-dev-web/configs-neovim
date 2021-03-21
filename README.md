@@ -51,3 +51,5 @@
   nvim +PlugInstall
   ```
   wait this finish and **DONE!**
+
+link to learn about how to select multiple lines on vim https://github.com/mg979/vim-visual-multi

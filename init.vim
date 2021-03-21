@@ -23,6 +23,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'chrisbra/Colorizer'
   Plug 'dracula/vim', {'as':'dracula'}
   Plug 'tomasiser/vim-code-dark'
+  "select multi words
+  Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 call plug#end()
 
 set nu
