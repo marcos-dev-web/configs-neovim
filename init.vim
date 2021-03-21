@@ -1,6 +1,4 @@
-"command to disable error version messagePU
-let g:coc_disable_startup_warning = 1
-
+let g:node_client_debug = 1
 "plugins
 call plug#begin('~/.vim/plugged')
   "react
@@ -9,6 +7,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'jparise/vim-graphql'
+  Plug 'maxmellon/vim-jsx-pretty'
   "-----
   Plug 'jiangmiao/auto-pairs'
   Plug 'scrooloose/nerdtree'
@@ -26,6 +25,9 @@ call plug#begin('~/.vim/plugged')
   "select multi words
   Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 call plug#end()
+
+"command to disable error version messagePU
+let g:coc_disable_startup_warning = 1
 
 set nu
 set nowrap
@@ -53,15 +55,18 @@ set breakindent
 filetype indent on
 syntax on
 
-colorscheme codedark
+colorscheme dogrun
 
 "open terminal
 tnoremap <Esc> <C-\><C-n>
+
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+
 function! OpenTerminal()
   split term://zsh
   resize 10
 endfunction
+
 nnoremap <c-t> :call OpenTerminal()<CR>
 
 "maps
@@ -75,7 +80,9 @@ let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeIgnore = []
 let g:NERDTreeStatusline = ''
+
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
 "autocompletion refresh
@@ -83,7 +90,9 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
@@ -95,6 +104,7 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
