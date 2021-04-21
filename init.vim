@@ -13,17 +13,19 @@ call plug#begin('~/.vim/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-  Plug 'wadackel/vim-dogrun'
   Plug 'mustache/vim-mustache-handlebars'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'styled-components/vim-styled-components', {'branch': 'main'}
   Plug 'briancollins/vim-jst'
   Plug 'chrisbra/Colorizer'
-  Plug 'dracula/vim', {'as':'dracula'}
   Plug 'tomasiser/vim-code-dark'
-  "select multi words
-  Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+	Plug 'HerringtonDarkholme/yats.vim'
+
+	" colorschemes
+  Plug 'dracula/vim', {'as':'dracula'}
+  Plug 'wadackel/vim-dogrun'
+	Plug 'chriskempson/base16-vim'
 call plug#end()
 
 "command to disable error version messagePU
@@ -34,7 +36,7 @@ set nowrap
 set mouse=a
 set tabstop=2
 set shiftwidth=2
-set expandtab
+set noexpandtab
 set ai
 set si
 set termguicolors
@@ -55,7 +57,7 @@ set breakindent
 filetype indent on
 syntax on
 
-colorscheme dogrun
+colorscheme base16-atelier-forest
 
 "open terminal
 tnoremap <Esc> <C-\><C-n>
