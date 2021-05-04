@@ -10,15 +10,14 @@ call plug#begin('~/.vim/plugged')
 	" syntax
 	Plug 'StanAngeloff/php.vim'
 
-	"autocomplete
-	Plug 'ncm2/ncm2'
-	Plug 'phpactor/phpactor'
-	Plug 'phpactor/ncm2-phpactor'
-
 	"find files
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
 call plug#end()
+
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+set completeopt=noinsert,menuone,noselect
 
 set nu
 set nowrap
@@ -103,3 +102,4 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 
 "enter to confirm selection
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
