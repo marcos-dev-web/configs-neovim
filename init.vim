@@ -23,7 +23,6 @@ set shiftwidth=2
 set noexpandtab
 set ai
 set si
-set termguicolors
 set cursorline
 set nowritebackup
 set nobackup
@@ -37,6 +36,12 @@ set hlsearch
 set inccommand=split
 set title
 set breakindent
+
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 filetype indent on
 syntax on
@@ -99,3 +104,5 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 "enter to confirm selection
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+hi CursorLine term=NONE cterm=NONE
+hi CursorLineNr cterm=NONE
