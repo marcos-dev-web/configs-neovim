@@ -57,6 +57,19 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim +PlugInstall
 
 ```
+## Install emmet and autocomplete to html, css, javascript
+
+```
+
+# run neovim
+nvim
+
+# enter in command mode typing ":"
+
+:CocInstall coc-html coc-css coc-tsserver coc-emmet
+
+```
+
 wait this finish and **DONE!**
 
 link to learn about how to select multiple lines on vim https://github.com/mg979/vim-visual-multi
