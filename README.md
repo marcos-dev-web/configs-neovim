@@ -17,45 +17,46 @@ git config --global user.email "your_email_user_git_hub"
 git config --global core.editor "your_editor ex: nvim"
 ```
 
-* install node
+* install node, npm and yarn
 ```bash
-sudo apt install nodejs -y
-sudo apt install npm -y
 
-cd ~/
-mkdir node
-cd node/
+sudo apt install npm -y
+cd ~/ && mkdir node && cd node/
 
 npm i n
 
-# Run as sudo
-#this install npm latest version
-./node_modules/n/bin/n stable
-sudo apt remove nodejs -y
-cd ..
-rm -rf node/
-```
-* install yarn as global
-```bash
+sudo ./node_modules/n/bin/n stable && cd .. && rm -rf node/
+
 sudo npm i -g yarn
+
 ```
 * install & configure neovim
 ```bash
+
 sudo apt install neovim -y
 mkdir ~/.config/nvim
-touch ~/.config/nvim/init.vim
+touch ~/.config/nvim/init.vim  # Here is the neovim configs
+
 ```
-* insert this configurations into `~/.config/nvim/init.vim` save and close
 * install vim-plug
+
 ```bash
+# vim-plug is plugin manager
+
 cd ~/
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 ```
+
+* insert  [this configurations](init.vim) into `~/.config/nvim/init.vim` save and close
+
 * install the plugins that are in the init.vim
 ```bash
+
 nvim +PlugInstall
+
 ```
-  wait this finish and **DONE!**
+wait this finish and **DONE!**
 
 link to learn about how to select multiple lines on vim https://github.com/mg979/vim-visual-multi
