@@ -21,9 +21,13 @@
   ```bash
   sudo apt install nodejs -y
   sudo apt install npm -y
+  
   cd ~/
   mkdir node
   cd node/
+  
+  npm i n
+  
   ./node_modules/n/bin/n stable #this install npm latest version
   sudo apt remove nodejs -y
   cd ..
