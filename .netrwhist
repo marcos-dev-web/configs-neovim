@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/vinicius/Desktop/planeta-entregas/entregador/backend/app/Controllers/Http'
+let g:netrw_dirhist_4='/home/vinicius/Desktop/planeta-entregas/entregador/backend/app/Controllers'
+let g:netrw_dirhist_3='/home/vinicius/Desktop/planeta-entregas/entregador/backend/app'
+let g:netrw_dirhist_2='/home/vinicius/Desktop/planeta-entregas/entregador/backend'
+let g:netrw_dirhist_1='/home/vinicius/Desktop/planeta-entregas/entregador/backend/app/Models'
+let g:netrw_dirhist_0='/home/vinicius/Desktop/planeta-entregas/entregador/backend/app'
+let g:netrw_dirhist_9='/home/vinicius/Desktop/planeta-entregas/entregador/backend'
+let g:netrw_dirhist_8='/home/vinicius/dev/prototype'
+let g:netrw_dirhist_7='/home/vinicius/dev/linux_app'
+let g:netrw_dirhist_6='/tmp/cicle'
