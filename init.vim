@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'leafgarland/typescript-vim'
 	Plug 'peitalin/vim-jsx-typescript'
 	Plug 'puremourning/vimspector'
+	Plug 'jiangmiao/auto-pairs'
 
 	" react highlight
 	Plug 'maxmellon/vim-jsx-pretty'
