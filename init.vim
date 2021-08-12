@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'mxw/vim-jsx'
 	Plug 'leafgarland/typescript-vim'
 	Plug 'peitalin/vim-jsx-typescript'
+	Plug 'puremourning/vimspector'
 
 	" react highlight
 	Plug 'maxmellon/vim-jsx-pretty'
@@ -51,7 +52,7 @@ endif
 filetype indent on
 syntax on
 
-nnoremap ; <ESC>:%s/;<CR><ESC>
+nnoremap ; <ESC>:%s/;
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 nnoremap <C-f> :Files <CR>
@@ -68,7 +69,7 @@ endfunction
 
 nnoremap <c-t> :call OpenTerminal()<CR>
 
-nnoremap <C-s-i> :Prettier <CR><ESC>:%s/;<CR>
+nnoremap <C-s-i> :Prettier <CR><ESC>
 
 let g:coc_disable_startup_warning = 1
 
@@ -103,6 +104,10 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 
 "enter to confirm selection
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gD <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 hi Normal guibg=NONE ctermbg=NONE
 
