@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/vinicius/Desktop/planeta-entregas/entregador/web'
 let g:netrw_dirhist_7='/home/vinicius/Desktop/planeta-entregas/entregador/mobile/app'
 let g:netrw_dirhist_6='/home/vinicius/Desktop/planeta-entregas/entregador/mobile/app/src'
 let g:netrw_dirhist_5='/home/vinicius/Desktop/planeta-entregas/entregador/mobile/app'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_2='/home/vinicius/Desktop/planeta-entregas/entregador/mobile
 let g:netrw_dirhist_1='/home/vinicius/Desktop/planeta-entregas/entregador/mobile/app/src/components/groupButton'
 let g:netrw_dirhist_0='/home/vinicius/Desktop/planeta-entregas/entregador/mobile/app/src/pages/Home'
 let g:netrw_dirhist_9='/home/vinicius/Desktop/planeta-entregas/entregador/mobile/app/src/pages'
-let g:netrw_dirhist_8='/home/vinicius/Desktop/planeta-entregas/entregador/mobile/app/src'

@@ -119,4 +119,4 @@ hi Normal guibg=NONE ctermbg=NONE
 hi CursorLine term=NONE cterm=NONE
 hi CursorLineNr cterm=NONE
 
-colorscheme base16-harmonic-dark
+colorscheme base16-chalk
