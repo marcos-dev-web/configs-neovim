@@ -21,8 +21,9 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 set nu
+set rnu
 set nowrap
-set mouse=a
+set mouse=
 set tabstop=2
 set shiftwidth=2
 set expandtab
