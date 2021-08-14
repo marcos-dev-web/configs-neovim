@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'peitalin/vim-jsx-typescript'
 	Plug 'puremourning/vimspector'
 	Plug 'jiangmiao/auto-pairs'
+  Plug 'alvan/vim-closetag'
 
 	" react highlight
 	Plug 'maxmellon/vim-jsx-pretty'
@@ -113,6 +114,21 @@ nmap <silent> gr <Plug>(coc-references)
 
 nnoremap <silent> K :call CocAction('doHover')<CR>
 nnoremap <silent> B :Buffers <CR>
+
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.tsx'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+let g:closetag_filetypes = 'html,xhtml,phtml,jsx'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+let g:closetag_emptyTags_caseSensitive = 1
+
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ 'typescriptreact': 'jsxRegion,tsxRegion',
+    \ 'javascriptreact': 'jsxRegion',
+    \ }
+
+let g:closetag_shortcut = '>'
 
 hi Normal guibg=NONE ctermbg=NONE
 
