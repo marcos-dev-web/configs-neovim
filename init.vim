@@ -2,7 +2,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
  	Plug 'neoclide/coc.nvim', {'branch': 'release'}
  	Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-	Plug 'chriskempson/base16-vim'
 
 	Plug 'itchyny/lightline.vim'
 
@@ -14,8 +13,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'jiangmiao/auto-pairs'
   Plug 'alvan/vim-closetag'
 
-	" react highlight
 	Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
@@ -55,7 +54,6 @@ endif
 filetype indent on
 syntax on
 
-nnoremap ; <ESC>:%s/;
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 nnoremap <C-f> :Files <CR>
@@ -130,9 +128,10 @@ let g:closetag_regions = {
 
 let g:closetag_shortcut = '>'
 
-hi Normal guibg=NONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE guibg=NONE
+hi CursorLine term=NONE cterm=NONE guibg=#232e22
 
-hi CursorLine term=NONE cterm=NONE
 hi CursorLineNr cterm=NONE
 
-colorscheme base16-chalk
+highlight LineNr guifg=#0BFF00
+
