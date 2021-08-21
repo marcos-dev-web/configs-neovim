@@ -26,7 +26,7 @@ set nowrap
 set mouse=
 set tabstop=2
 set shiftwidth=2
-set expandtab
+set noexpandtab
 set ai
 set si
 set cursorline
