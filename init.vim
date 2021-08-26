@@ -1,3 +1,4 @@
+
 call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
  	Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -10,8 +11,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'leafgarland/typescript-vim'
 	Plug 'peitalin/vim-jsx-typescript'
 	Plug 'puremourning/vimspector'
-	Plug 'jiangmiao/auto-pairs'
-  Plug 'alvan/vim-closetag'
 
 	Plug 'maxmellon/vim-jsx-pretty'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -113,25 +112,9 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call CocAction('doHover')<CR>
 nnoremap <silent> B :Buffers <CR>
 
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.tsx'
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
-let g:closetag_filetypes = 'html,xhtml,phtml,jsx'
-let g:closetag_xhtml_filetypes = 'xhtml,jsx'
-let g:closetag_emptyTags_caseSensitive = 1
-
-let g:closetag_regions = {
-    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-    \ 'javascript.jsx': 'jsxRegion',
-    \ 'typescriptreact': 'jsxRegion,tsxRegion',
-    \ 'javascriptreact': 'jsxRegion',
-    \ }
-
-let g:closetag_shortcut = '>'
-
 hi Normal guibg=NONE ctermbg=NONE guibg=NONE
-hi CursorLine term=NONE cterm=NONE guibg=#232e22
+hi CursorLine term=NONE cterm=NONE guibg=#222222
 
 hi CursorLineNr cterm=NONE
 
-highlight LineNr guifg=#0BFF00
-
+highlight LineNr guifg=#888888
