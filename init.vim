@@ -15,9 +15,13 @@ call plug#begin('~/.vim/plugged')
 	Plug 'maxmellon/vim-jsx-pretty'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
+	Plug 'sainnhe/sonokai'
+
 	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
 call plug#end()
+
+" ----
 
 set nu
 set rnu
@@ -41,20 +45,33 @@ set hlsearch
 set inccommand=split
 set title
 set breakindent
-
-
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
-
+set background=dark
 
 filetype indent on
 syntax on
 
+if has('termguicolors')
+	set termguicolors
+endif
+
+let g:sonokai_style = 'default'
+let g:sonokai_enable_italic = 1
+let g:sonokai_disable_italic_comment = 1
+
+colorscheme sonokai
+
 nnoremap <C-n> gt
 nnoremap <C-p> gT
+
+hi CursorLine term=NONE cterm=NONE guibg=#222222
+
+hi CursorLineNr cterm=NONE
+
+highlight LineNr guifg=#888888
+
+
+" ---
+
 nnoremap <C-f> :Files <CR>
 
 "open terminal
@@ -112,9 +129,3 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call CocAction('doHover')<CR>
 nnoremap <silent> B :Buffers <CR>
 
-hi Normal guibg=NONE ctermbg=NONE guibg=NONE
-hi CursorLine term=NONE cterm=NONE guibg=#222222
-
-hi CursorLineNr cterm=NONE
-
-highlight LineNr guifg=#888888
