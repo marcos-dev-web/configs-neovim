@@ -23,13 +23,22 @@ call plug#end()
 
 " ----
 
+let g:jsx_ext_required = 0
+
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
+
+autocmd bufnewfile,bufread *.js set filetype=javascriptreact
+
+" ----
+
 set nu
 set rnu
 set nowrap
 set mouse=
 set tabstop=2
 set shiftwidth=2
-set noexpandtab
+set expandtab
 set ai
 set si
 set cursorline
@@ -69,6 +78,16 @@ hi CursorLineNr cterm=NONE
 
 highlight LineNr guifg=#888888
 
+let g:coc_global_extensions = [
+  \ 'coc-tsserver',
+	\ 'coc-css',
+	\ 'coc-html',
+	\ 'coc-emmet',
+	\ 'coc-json',
+	\ 'coc-eslint',
+	\ 'coc-prettier'
+  \ ]
+
 
 " ---
 
@@ -80,7 +99,7 @@ tnoremap <Esc> <C-\><C-n>
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
 function! OpenTerminal()
-  split term://zsh
+  split term://bash
   resize 10
 endfunction
 
@@ -90,7 +109,24 @@ nnoremap <C-s-i> :Prettier <CR><ESC>
 
 let g:coc_disable_startup_warning = 1
 
-nnoremap <silent> <C-k><C-f> :NERDTreeToggle<CR>
+nnoremap <silent> K :call CocAction('doHover')<CR>
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+
+function! ShowDocIfNoDiagnostic(timer_id)
+  if (coc#float#has_float() == 0 && CocHasProvider('hover') == 1)
+    silent call CocActionAsync('doHover')
+  endif
+endfunction
+
+function! s:show_hover_doc()
+  call timer_start(500, 'ShowDocIfNoDiagnostic')
+endfunction
+
+autocmd CursorHoldI * :call <SID>show_hover_doc()
+autocmd CursorHold * :call <SID>show_hover_doc()
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
