@@ -66,12 +66,14 @@ endif
 let g:sonokai_style = 'default'
 let g:sonokai_enable_italic = 1
 let g:sonokai_disable_italic_comment = 1
+let g:sonokai_transparent_background = 1
 
 colorscheme sonokai
 
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 
+hi Normal guibg=#000
 hi CursorLine term=NONE cterm=NONE guibg=#222222
 
 hi CursorLineNr cterm=NONE
