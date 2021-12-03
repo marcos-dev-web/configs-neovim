@@ -15,7 +15,9 @@ export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{n
 # Install git
 
 ```bash
-add-apt-repository ppa:git-core/ppa # apt update; apt install git
+add-apt-repository ppa:git-core/ppa;
+apt update;
+apt install git;
 ```
 
 # Install vim-plug
